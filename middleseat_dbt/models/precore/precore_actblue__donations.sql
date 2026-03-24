@@ -1,3 +1,12 @@
+--dbt setup 
+--Pulls donation data
+--Joins it with lookup tables (codes, sources, exclusions)
+--Cleans + enriches fields
+--Classifies donations (recurring, source, etc.)
+--Outputs a final structured table
+
+
+
 {{
     config(
         dist='wdl_transaction_id',
