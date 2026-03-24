@@ -1,3 +1,7 @@
+--dbt setup to templatize a repeptive task
+--for segementing actblue donations into origin buckets aka donation came from email or donation came from the website 
+--if there is a source type listed we use that and if not the code below is to group and standarize partial info into buckets 
+--case whens in SQL to format and group info coming in from ActBlue sync to create a dashboard with a labeled dropdown 
 {% macro likely_source_type(source_type, refcode=none, form_name=none) -%}
 {% set search_fields = [refcode, form_name] %}
 
