@@ -1,3 +1,9 @@
+--dbt setup 
+--Dynamically finds Shopify tables
+--Unions them together
+--Standardizes Shopify + ActBlue into the same structure
+--Combines both into one table
+
 {%- set schema_pattern = 'dbt_%' -%}
 {%- set precore_table_name = 'precore_shopify__orders_v2' -%}
 {%- set shopify_tables = get_precore_tables(schema_pattern, precore_table_name, schema_exclude=['dbt_precore'], model_exclude=['precore_shopify__orders_v1']) -%}
