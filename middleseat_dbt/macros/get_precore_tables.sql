@@ -1,4 +1,10 @@
-{%- macro get_precore_tables(schema_pattern, model_name, schema_exclude=[], model_include=[], model_exclude=[]) -%}
+--dbt setup to templatize a repeptive task
+--Searches your database for tables
+--Applies flexible filters (schema + table names)
+--Returns them for use in other models/macros
+--This is useful for having dynamic union tables, automating staging across schemas, avoiding hardcoding table names, 
+--and building scalable dbt models
+    %- macro get_precore_tables(schema_pattern, model_name, schema_exclude=[], model_include=[], model_exclude=[]) -%}
 
 {%- if execute -%}
 
