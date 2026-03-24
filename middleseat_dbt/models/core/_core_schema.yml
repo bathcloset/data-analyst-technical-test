@@ -4,7 +4,22 @@ models:
   - name: core__donations
     columns:
       - name: wdl_transaction_id
-        description: ""
+        description: "unique id number for each and every transaction"
         data_tests:
           - unique
           - not_null
+      - name: wdl_client_code
+        description: "unique code or id for every client that we have - makes it easy to sort by so we can see the totals for each client"
+        data_tests:
+          - unique
+          - not_null  
+       - name: et_created_at
+        description: "the exact time the transaction occured in Eastern Standard time - helpful for troubleshooting and sorting by dates"
+        data_tests:
+          - unique
+          - not_null
+      - name: et_created_month_trunc,       
+        description: "this field is the time mamipulated with data to break it down to the month so we can get montly totals - that can then be crossreferenced with client totals"
+        data_tests:
+          - unique
+          - not_null             
